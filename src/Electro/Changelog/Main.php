@@ -15,6 +15,7 @@ use pocketmine\utils\TextFormat as C;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
+use pocketmine\command\ConsoleCommandSender;
 
 class Main extends PluginBase implements Listener{
 
