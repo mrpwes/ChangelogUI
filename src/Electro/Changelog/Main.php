@@ -19,16 +19,9 @@ use pocketmine\command\ConsoleCommandSender;
 
 class Main extends PluginBase implements Listener{
 
-   public function onEnable(){
-       $this->getLogger()->info(C::GREEN . "Enabled");
-       
        @mkdir($this->getDataFolder());
        $this->saveDefaultConfig();
        $this->getResource("config.yml");
-   }
-
-   public function onDisable(){
-       $this->getLogger()->info(C::RED . "Disabled");
    }
 
    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool {
@@ -61,7 +54,7 @@ class Main extends PluginBase implements Listener{
            });
            $form->setTitle($this->getConfig()->get("title"));
            $form->setContent($this->getConfig()->get("description"));
-           $form->addButton($this->getConfig()->get("btn"), 0, "textures/ui/realms_green_check");
+           $form->addButton($this->getConfig()->get("btn"));
            $form->sendToPlayer($sender);
            return $form;
    }
